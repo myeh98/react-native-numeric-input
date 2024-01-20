@@ -1,6 +1,6 @@
 declare module 'react-native-numeric-input' {
   import { ViewStyle } from 'react-native'
-  import { Color } from 'csstype'
+  import type * as CSS from 'csstype';
 
   export interface INumericInputProps {
     value?: number
@@ -10,18 +10,18 @@ declare module 'react-native-numeric-input' {
     valueType?: 'integer' | 'real'
     initValue?: number
     iconSize?: number
-    borderColor?: Color
+    borderColor?: CSS.Properties
     iconStyle?: ViewStyle
     totalWidth?: number
     separatorWidth?: number
     type?: 'plus-minus' | 'up-down'
     rounded?: boolean
-    textColor?: Color
+    textColor?: CSS.Properties
     containerStyle?: ViewStyle
     inputStyle?: ViewStyle
-    upDownButtonsBackgroundColor?: Color
-    rightButtonBackgroundColor?: Color
-    leftButtonBackgroundColor?: Color
+    upDownButtonsBackgroundColor?: CSS.Properties
+    rightButtonBackgroundColor?: CSS.Properties
+    leftButtonBackgroundColor?: CSS.Properties
     totalHeight?: number
     onChange: (value: number) => void
     onLimitReached?: (isMax: boolean, msg: string) => void
@@ -40,3 +40,5 @@ declare module 'react-native-numeric-input' {
 
   export const DIMENTIONS: { height: number; width: number }
 }
+
+export default NumericInput
